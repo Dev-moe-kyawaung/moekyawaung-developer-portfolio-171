@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --holo-cyan: #00f3ff;
+    --holo-purple: #a855f7;
+    --holo-emerald: #10b981;
+    --holo-amber: #f59e0b;
+    --holo-pink: #ec4899;
+    --holo-dark: #030712;
+    --holo-panel: rgba(7, 16, 34, 0.75);
+    --holo-border: rgba(0, 243, 255, 0.25);
+  }
+
+  body {
+    background-color: #030712;
+    color: #f8fafc;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Hologram Grid Background */
+.holo-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.holo-dots-bg {
+  background-image: radial-gradient(rgba(0, 243, 255, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glassmorphic Hologram Panel */
+.holo-panel {
+  background: rgba(8, 18, 38, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 243, 255, 0.07), inset 0 0 16px 0 rgba(0, 243, 255, 0.04);
+}
+
+.holo-panel-purple {
+  background: rgba(22, 10, 40, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(168, 85, 247, 0.08), inset 0 0 16px 0 rgba(168, 85, 247, 0.05);
+}
+
+.holo-panel-emerald {
+  background: rgba(6, 28, 24, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(16, 185, 129, 0.08), inset 0 0 16px 0 rgba(16, 185, 129, 0.05);
+}
+
+/* Hologram Glow Effects */
+.holo-glow-cyan {
+  text-shadow: 0 0 12px rgba(0, 243, 255, 0.7), 0 0 24px rgba(0, 243, 255, 0.4);
+}
+
+.holo-glow-purple {
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.7), 0 0 24px rgba(168, 85, 247, 0.4);
+}
+
+.holo-box-glow {
+  box-shadow: 0 0 25px rgba(0, 243, 255, 0.35), inset 0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+/* Hologram Scanlines */
+.holo-scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 243, 255, 0.04) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+/* Hologram Sweeping Laser */
+@keyframes holoScanSweep {
+  0% {
+    top: -10%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+.animate-scan-sweep {
+  animation: holoScanSweep 4s linear infinite;
+}
+
+/* Hologram Flickering Glitch */
+@keyframes holoFlicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.6; }
+  94% { opacity: 1; }
+  96% { opacity: 0.85; }
+  97% { opacity: 1; }
+}
+
+.animate-holo-flicker {
+  animation: holoFlicker 6s ease-in-out infinite;
+}
+
+/* Pulse Ring Animation */
+@keyframes holoRingPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.animate-ring-pulse {
+  animation: holoRingPulse 3.5s ease-in-out infinite;
+}
+
+/* Custom Hologram Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 243, 255, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 243, 255, 0.6);
+}
